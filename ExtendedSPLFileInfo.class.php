@@ -1,4 +1,10 @@
 <?php
+/**
+ * ExtendedSPLFileInfo
+ *
+ * (c) 2014 Rob Lambell <rob[at]lambell.info>
+ * This code is licensed under MIT license (see LICENSE for details)
+ */
 
 class ExtendedSPLFileInfo extends SPLFileInfo
 {
