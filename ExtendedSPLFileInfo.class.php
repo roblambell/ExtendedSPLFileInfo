@@ -18,12 +18,12 @@ class ExtendedSPLFileInfo extends SPLFileInfo
     /**
      * @return int
      */
-    function getDirSize()
+    function getRealSize()
     {
         if ($this->isDir()) {
             $path = $this->getPathname();
         } else {
-            $path = $this->getPath();
+            return $this->getSize();
         }
 
         $size = 0;
@@ -67,7 +67,7 @@ class ExtendedSPLFileInfo extends SPLFileInfo
      */
     public function getHumanSize($bytes = false, $decimals = 2)
     {
-        $bytes = $bytes ? $bytes : $this->getSize();
+        $bytes = $bytes ? $bytes : $this->getRealSize();
 
         $size = array('B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB');
         $factor = floor((strlen($bytes) - 1) / 3);
